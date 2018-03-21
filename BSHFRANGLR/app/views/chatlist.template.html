@@ -1,0 +1,166 @@
+<div class="">
+  <h4 class="chat-main-title">CHAT LIST</h4>
+  <div class="chatlist-container">
+  <div class="col-md-4 container-chat">
+    <h5 class="chat-title">CHANNEL NAME</h5>
+    <div class="input-group seacrbtngroup">
+        <input type="text" class="form-control chat-searchfile search-input" ng-model="query" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default chat-search-btn" type="button"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></button>
+        </span>
+    </div>
+    <div class="search-item">
+        <ul class="chatUL scrolling-container">
+            <li style="cursor: pointer" ng-click="gotoSubscribers(chatchannel.channelId)" ng-repeat="chatchannel in chatchannels | filter:query">{{chatchannel.channelTitle}}<span class="badge">{{chatchannel.noOfUsersSubscribed}}</span></li>
+        </ul>
+    </div>
+
+  </div>
+  <div class="col-md-4 container-chat-user">
+    <h5 class="chat-title">AVAILABLE USERS</h5>
+    <div class="search-item">
+        <p class="selectUser">Select a channel to view users</p>
+        <ul class="chatUL scrolling-container">
+            <li>{{chatsubscribers.length}} Users</li>
+            <li style="cursor: pointer"
+            ng-repeat="chatsubscriber in chatsubscribers"
+            ng-click="getuserchat(chatsubscriber.mobileNumber,((chatsubscriber.userName == '' || chatsubscriber.userName == ' ')?chatsubscriber.mobileNumber:chatsubscriber.userName))"
+            >{{ (chatsubscriber.userName != '')?chatsubscriber.userName:chatsubscriber.nickName }} </li>
+        </ul>
+    </div>
+
+  </div>
+  <div class="col-md-4 chatting-container"  ng-show="activechat">
+    <a style="cursor: pointer" class="float-right closeicon" ng-click="togglechatwindow()"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
+    <h5 class="chat-title">CHATS</h5>
+    <div class="">
+      <div class="col-md-12 col-xs-12 username-title">
+          <h4 class="" id="chatwindowname">{{ (chatsubscriber.userName != '')?chatsubscriber.userName:chatsubscriber.nickName }}</h4>
+        </div>
+          <div class="panel-body msg_container_base scrolling-container" id="msgDiv">
+          </div>
+          <div class="col-md-12">
+              <div class="input-group">
+                  <input id="btn-input" ng-model="activemessage" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." required=""/>
+                  <span class="input-group-btn">
+                      <input type="hidden" ng-model="activeReceiver" value="{{activeReceiver}}">
+                      <button ng-click="sendchat()" ui-keypress="{13:'sendchat($event)'}" class="btn primary-btn-alt primary-msg-btn" id="btn-chat">Send</button>
+                  </span>
+              </div>
+      </div>
+        <!-- <div class="">
+            <div class="panel panel-default">
+                <div class="top-bar">
+
+                    <div class="col-md-8 col-xs-8">
+                        <h4 class="panel-title" id="chatwindowname">{{chatsubscriber.userName}}</h4>
+                    </div>
+                    <div class="col-md-4 col-xs-4" style="text-align: right;">
+                        <a ><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
+                        <a style="cursor: pointer" ng-click="togglechatwindow()"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
+                    </div>
+                </div>
+                <div class="panel-body msg_container_base" id="msgDiv">
+
+
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" ng-model="activemessage" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
+                        <span class="input-group-btn">
+                            <input type="hidden" ng-model="activeReceiver" value="{{activeReceiver}}">
+                            <button ng-click="sendchat()" class="btn btn-primary btn-sm" id="btn-chat">Send</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="col-xs-4 chats-view">
+    <h4>CHANNEL NAME</h4>
+    <div class="search-item">
+        <input type="text" class="chatInput" ng-model="query" placeholder="Search by channel name.." title="Type in a name">
+
+        <ul class="chatUL">
+
+            <li ng-repeat="chatchannel in chatchannels" ng-click="getchannelUsers( chatchannel.channelId)">{{chatchannel.channelTitle}} <span class="badge">{{chatchannel.noOfUsersSubscribed}}</span></li>
+
+            <li style="cursor: pointer" ng-click="gotoSubscribers(chatchannel.channelId)" ng-repeat="chatchannel in chatchannels | filter:query">{{chatchannel.channelTitle}} <span class="badge">{{chatchannel.noOfUsersSubscribed}}</span></li>
+        </ul>
+    </div>
+</div>
+
+<div class="col-xs-4 chats-view">
+    <h4>AVAILABLE USERS</h4>
+    <div class="search-item">
+        <p class="selectUser">Select a channel to view users</p>
+        <h5>{{chatsubscribers.length}} Users</h5>
+        <ul class="chatUL">
+            <li style="cursor: pointer"
+            ng-repeat="chatsubscriber in chatsubscribers"
+            ng-click="getuserchat(chatsubscriber.mobileNumber,((chatsubscriber.userName == '' || chatsubscriber.userName == ' ')?chatsubscriber.mobileNumber:chatsubscriber.userName))"
+            >{{ (chatsubscriber.userName =='' || chatsubscriber.userName == ' ')?chatsubscriber.mobileNumber:chatsubscriber.userName }} </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="row chat-window col-xs-4" id="chat_window_1" ng-show="activechat">
+
+    <div class="col-xs-12 col-md-12">
+        <div class="panel panel-default">
+            <div class="top-bar">
+
+                <div class="col-md-8 col-xs-8">
+                    <h4 class="panel-title" id="chatwindowname">User({{chatsubscriber.userName}})</h4>
+                </div>
+                <div class="col-md-4 col-xs-4" style="text-align: right;">
+                    <a ><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
+                    <a style="cursor: pointer" ng-click="togglechatwindow()"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
+                </div>
+            </div>
+            <div class="panel-body msg_container_base" id="msgDiv">
+
+
+            </div>
+            <div class="panel-footer">
+                <div class="input-group">
+                    <input id="btn-input" ng-model="activemessage" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
+                    <span class="input-group-btn">
+                        <input type="hidden" ng-model="activeReceiver" value="{{activeReceiver}}">
+                        <button ng-click="sendchat()" class="btn btn-primary btn-sm" id="btn-chat">Send</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

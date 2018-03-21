@@ -1,0 +1,820 @@
+body{
+    color: #5b5b5b;
+}
+label{
+    color: #5b5b5b;
+}
+.padleft30{
+    padding-left:30px;
+}
+.noborder{
+    border:none !important;
+}
+.to-top{
+    z-index:9999;
+    bottom:100px;
+}
+.btn-gold{
+    border:2px solid #CCCCCC;
+    margin:0px 20px;
+    color:#CCCCCC;
+    background:none;
+    font-weight:bold;
+}
+.btn-primary{
+    font-weight:bold;
+}
+.flydiv{
+    position:fixed;
+    height:54px;
+    width:100%;
+    background-color:#333333;
+    background-color:rgba(0,0,0,0.5);
+    z-index:999;
+    text-align:right;
+    padding:7px;
+    bottom:0px;
+    display:none;
+}
+.flyactive{
+    display:block;
+}
+@media screen and ( max-height: 600px ){
+    .flydiv{
+        display:block;
+    }
+}
+.txtborder{
+    border:1px solid #d3d1d1;
+    display: inline;
+}
+#prices_option_table{
+    border: 1px solid #ccc;
+    width: 100%;
+}
+#prices_option_table tr{
+    border: 1px solid #e3e3e3;
+}
+#prices_option_table tr td{
+    padding:15px 11px !important;
+}
+#prices_extra_table{
+    border: 1px solid #ccc;
+    width: 100%;
+}
+#prices_extra_table tr{
+    border: 1px solid #e3e3e3;
+}
+#prices_extra_table tr td{
+    padding:15px 15px !important;
+}
+.delpopup{
+    position:fixed;
+    height:100%;
+    width:100%;
+    background-color:rgba(0,0,0,0.5);
+    z-index:1000;
+    display:none;
+    z-index: 9100;
+}
+.delpoptext{
+    background-color:#FFFFFF;
+    width:380px;
+    height:120px;
+    padding:15px 20px;
+    box-shadow:0px 0px 5px #000;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-200px;
+    margin-top:-75px;
+    text-align:center;
+    font-size:16px;
+    padding:30px;
+    border-radius:2px;
+}
+.yesbut{
+    background-color:#e3847a;
+    color:#FFFFFF;
+    border:solid 2px #e3847a;
+    border-radius:3px;
+    padding:3px 10px;
+    width:70px;
+    font-size:14px;
+    margin:14px 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+.nobut{
+    background-color:#FFFFFF;
+    color:#b59d79;
+    border:solid 2px #eee9e2;
+    border-radius:3px;
+    padding:3px 10px;
+    width:70px;
+    font-size:14px;
+    margin:14px 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+.rowdelpopup{
+    position:fixed;
+    height:100%;
+    width:100%;
+    background-color:rgba(0,0,0,0.5);
+    z-index:1000;
+    display:none;
+    z-index: 9100;
+}
+.page-loader{
+    position:fixed;
+    height:100%;
+    width:100%;
+    background-color:rgba(0,0,0,0.5);
+    z-index:1000;
+    z-index: 9100;
+    display: none;
+}
+.loader-box{
+    background-color:#FFFFFF;
+    width:180px;
+    height:90px;
+    padding:15px 20px;
+    box-shadow:0px 0px 5px #000;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-90px;
+    margin-top:-45px;
+    text-align:center;
+    padding:20px;
+    border-radius:2px;
+    text-align: center;
+}
+.rowyesbut{
+    background-color:#e3847a;
+    color:#FFFFFF;
+    border:solid 2px #e3847a;
+    border-radius:3px;
+    padding:3px 10px;
+    width:70px;
+    font-size:14px;
+    margin:14px 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+.rownobut{
+    background-color:#FFFFFF;
+    color:#b59d79;
+    border:solid 2px #eee9e2;
+    border-radius:3px;
+    padding:3px 10px;
+    width:70px;
+    font-size:14px;
+    margin:14px 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+.errorbox{
+    border:1px solid #dc665a;
+}
+.errormsg{
+    width:90%;
+    left:5%;
+    top:0px;
+    padding:10px;
+    position:fixed;
+    z-index:1000;
+}
+.form-control{
+    border-radius: 0px;
+    height:38px;
+    padding: 4px 5px;
+    box-shadow: none;
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.emt-height{
+    height: 30px;
+}
+.closecan{
+    display: none;
+}
+#optDateText{
+    font-size: 12px;
+    padding: 8px 0px 0px 8px;
+    width:212px;
+    position: absolute;
+    top: 30px;
+}
+#extDateText{
+    font-size: 12px;
+    padding: 8px 0px 0px 8px;
+    width:212px;
+    position: absolute;
+    top: 30px;
+}
+.greybut{
+    background-color: #878787;
+    color: #FFFFFF;
+    padding: 5px 14px;
+    border: none;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.greybutpos{
+    position: absolute;
+    right:6px;
+    top:33px;
+}
+.dropdown-icon2{
+    top:28px;
+}
+.txtredcol{
+    color:#dc665a;
+}
+.dyndateleft{
+    float:left;
+}
+.dyndateright{
+    float:right;
+}
+.greyborder{
+    border:1px solid #CCCCCC;
+}
+.right75{
+    right: 75px;
+}
+.applycss{
+    width: 70%;
+    height: 36px;
+    border: none;
+}
+/*.oflowhide{
+    overflow: hidden;
+}*/
+#heading_accordion_options{
+    padding-bottom: 32px;
+}
+#heading_accordion_extras{
+    padding-bottom: 32px;
+}
+.trbgcolor{
+    background-color: #F8F8F8;
+}
+.trdisable{
+    color: #CCCCCC;
+}
+.tdtext{
+    height: 30px;
+    width:100px;
+    font-size: 12px;
+    display: inline;
+}
+.elehold{
+    position: relative;
+}
+.tdtxticon{
+    top: 3px;
+    right: 3px;
+    height: 26px;
+}
+.tdtxtsel{
+    height: 30px;
+    width: 86px;
+    display: inline-block;
+}
+.tdcalicon{
+    position: absolute;
+    right: 5px;
+    top: 8px;
+}
+.opttddatetxt{
+    height: 30px;
+    width:90px;
+    font-size: 12px;
+    display: inline;
+}
+.exttddatetxt{
+    height: 30px;
+    width:90px;
+    font-size: 12px;
+    display: inline;
+}
+.tdpriceband{
+    height: 30px;
+    width: 126px;
+    display: inline-block;
+}
+.tdsmtxt{
+    height: 30px;
+    width:50px;
+    font-size: 12px;
+    display: inline;
+}
+.datepicklbl{
+    line-height: 30px;
+    text-align:right;
+}
+.poppicklbl{
+    line-height: 30px;
+    text-align:right;
+    font-weight: bold;
+}
+.datepickblock{
+    position: absolute;
+    float:right;
+    right:60px;
+    top:12px;
+    width: 490px;
+}
+.datetxtbox{
+    height: 30px;
+    width: 130px;
+    font-size: 12px;
+}
+.datecalicon{
+    position: absolute;
+    right: 0px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 17px;
+    width:14px;
+}
+#prices_option_table .elehold .datecalicon{
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 17px;
+    width:14px;
+}
+#prices_extra_table .elehold .datecalicon{
+    position: absolute;
+    right: 6px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 17px;
+    width:14px;
+}
+.eventbut .icon-edit{
+    position: relative;
+    right: 0px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 19px;
+    width:18px;
+    background-position: 0px -16px;
+    float: left;
+}
+.butactive .icon-edit{
+    position: relative;
+    right: 0px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 19px;
+    width:18px;
+    background-position: 0px -34px;
+    float: left;
+}
+.eventbut .icon-clone{
+    position: relative;
+    right: 0px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 19px;
+    width:16px;
+    background-position: 0px -89px;
+    float: left;
+}
+.butactive .icon-clone{
+    position: relative;
+    right: 0px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 19px;
+    width:16px;
+    background-position: 0px -107px;
+    float: left;
+}
+.delbut .icon-delete{
+    position: relative;
+    right: 0px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 19px;
+    width:12px;
+    background-position: 0px -53px;
+    float: left;
+}
+.delactive .icon-delete{
+    position: relative;
+    right: 0px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 19px;
+    width:12px;
+    background-position: 0px -70px;
+    float: left;
+}
+.eventbut .icon-link{
+    position: relative;
+    right: 0px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 19px;
+    width:17px;
+    background-position: 0px -127px;
+    float: left;
+}
+.butactive .icon-link{
+    position: relative;
+    right: 0px;
+    top: 8px;
+    background-image:url("../img/en-sprite.png");
+    background-repeat: no-repeat;
+    height: 19px;
+    width:17px;
+    background-position: 0px -148px;
+    float: left;
+}
+.daterangepicker .daterangepicker_input i{
+    top: 6px !important;
+}
+.datestatussel{
+    height: 30px;
+    width: 141px;
+}
+.popstatussel{
+    height: 30px;
+    width: 171px;
+}
+.dateselicon{
+    top: 3px;
+    right: 24px;
+    height: 26px;
+}
+.popselicon{
+    top: 3px;
+    right: 2px;
+    height: 26px;
+}
+.eventbut{
+    cursor: not-allowed;
+    color:#878787;
+    background-color: #FFFFFF;
+    border:solid 1px #878787;
+    border-radius:3px;
+    line-height: 33px;
+    padding:0px 15px;font-size:14px;
+    text-transform: uppercase;
+    margin-left:15px;
+    float: right;
+}
+/*.eventbut:hover{
+    cursor: pointer;
+    background-color: #878787;
+    color: #FFFFFF;
+    border:solid 1px #878787;
+    border-radius:3px;
+    line-height: 33px;
+    padding:0px 15px;font-size:14px;
+    text-transform: uppercase;
+    margin-left:15px;
+    float: right;
+}*/
+.evebtactive{
+    background-color: #878787;
+    color: #FFFFFF;
+}
+.butactive{
+    cursor:pointer;
+    background-color: #878787;
+    color: #FFFFFF;
+    border:solid 1px #878787;
+}
+.delbut{
+    cursor: not-allowed;
+    color:#878787;
+    background-color: #FFFFFF;
+    border:solid 1px #878787;
+    border-radius:3px;
+    line-height: 33px;
+    padding:0px 15px;font-size:14px;
+    text-transform: uppercase;
+    margin-left:15px;
+    float: right;
+}
+/*
+.delbut:hover{
+    cursor: pointer;
+    color:#FFFFFF;
+    background-color: #dc665a;
+    border:solid 1px #dc665a;
+    border-radius:3px;
+    line-height: 33px;
+    padding:0px 15px;font-size:14px;
+    text-transform: uppercase;
+    margin-left:15px;
+    float: right;
+}*/
+.delactive{
+    cursor:pointer;
+    color:#FFFFFF;
+    background-color: #dc665a;
+    border:solid 1px #dc665a;
+}
+.eventbut i{
+    top:-1px;
+}
+.butsarea{
+    padding: 30px 0px;
+}
+.savebut{
+    cursor: pointer;
+    color:#FFFFFF;
+    background-color: #dc665a;
+    border:2px solid #dc665a;
+    border-radius:4px;
+    line-height: 34px;
+    padding:0px 20px;
+    font-size:15px;
+    text-transform: uppercase;
+    margin-right:15px;
+    float: left;
+}
+.savebut:hover{
+    cursor: pointer;
+    color:#FFFFFF;
+    background-color: #d34334;
+    border:2px solid #d34334;
+    border-radius:4px;
+    line-height: 34px;
+    padding:0px 20px;
+    font-size:15px;
+    text-transform: uppercase;
+    margin-right:15px;
+    float: left;
+}
+.resetbut{
+    cursor: pointer;
+    color:#c4ad8e;
+    background-color: #FFFFFF;
+    border:2px solid #eee9e2;
+    border-radius:4px;
+    line-height: 34px;
+    padding:0px 20px;
+    font-size:15px;
+    text-transform: uppercase;
+    margin-right:15px;
+    float: left;
+}
+.resetbut:hover{
+    cursor: pointer;
+    color:#FFFFFF;
+    background-color: #b9a284;
+    border:2px solid #b9a284;
+    border-radius:4px;
+    line-height: 34px;
+    padding:0px 20px;
+    font-size:15px;
+    text-transform: uppercase;
+    margin-right:15px;
+    float: left;
+}
+.modal{
+    text-align: center;
+}
+@media screen and (min-width: 768px) {
+    .modal:before{
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+}
+.modal-dialog{
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+.modal-title{
+    line-height: 1.42857;
+    margin: 0;
+    padding: 0 25px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.modal-body{
+    padding: 0 41px 41px;
+    position: relative;
+}
+.modal-footer{
+    padding: 18px 41px;
+    border: none;
+}
+.modal-header{
+    border:none;
+    min-height: 20px;
+    padding: 15px 15px 0px 15px;
+}
+.poptab{border:1px solid #CCCCCC;
+    padding-top: 10px;
+    margin-top: 15px;
+}
+.popthrow{
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+.poptdrow{
+    text-align: center;
+    padding: 10px;
+}
+.poprecord{
+    border-bottom: 1px solid #F0F0F0;
+}
+.poprecord .closeicon{
+    top: 7px;
+    background: #fff url("../img/close-icon.png") no-repeat scroll 50% center;
+    position: relative;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    opacity:0;
+    padding:11px 14px !important;
+}
+.poprecord:hover .closeicon{
+    opacity: 1;
+}
+.poprecord .showcloseicon{
+    top: 12px;
+    background: #fff url("../img/close-icon.png") no-repeat scroll 50% center;
+    position: relative;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    padding:11px 14px !important;
+}
+.poptdtext{
+    height: 30px;
+    width:68px;
+    font-size: 12px;
+    display: inline;
+}
+.btn-success{
+    background-color: #dc665a !important;
+    border-color: #dc665a !important;
+    color: #fff;
+}
+.btn-success:hover{
+    background-color: #d34334  !important;
+    border-color: #dc665a !important;
+    color: #fff;
+}
+.btn-success:active{
+    background-color: #d34334  !important;
+    border-color: #dc665a !important;
+    color: #fff;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover{background-color: #878787 !important;
+    border-color: #878787 !important;
+    color: #fff;
+}
+.justadded{
+    background-color: #fff2f3;
+}
+#extras_option_table .tdtxticon{
+    right:4px;
+}
+.panel .panel-heading .panel-title.col-md-12 a span.plus, .panel .panel-heading .panel-title.col-md-12 a span.minus{
+    padding:4px 9px;
+    line-height: 20px;
+}
+.panel .panel-collapse.collapse{
+    padding-bottom: 55px;
+}
+.weekerror{
+    color: #dc665a;
+    margin-right: 30px;
+    display: none;
+    float: right;
+}
+.weekerror-show{
+    display: block;
+}
+.prices-extras-row .tdtxticon{
+    right:4px;
+}
+td, th{
+    font-size: 14px;
+    padding: 0;
+}
+.dropdown-menu{
+    min-width: 40px;
+    border-radius: 0px;
+    box-shadow: none;
+    border:1px solid #878787;
+    position: absolute;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+.panel .panel-collapse.collapse {
+    overflow: visible;
+}
+.options-page-nav-change, .extras-page-nav-change {
+    padding: 2px 19px;
+    color: #878787;
+    cursor: pointer;
+}
+.options-page-nav-change:hover, .extras-page-nav-change:hover{
+    padding: 2px 19px;
+    color: #878787;
+    cursor: pointer;
+    background-color: #ededed;
+}
+.page-navigation{
+    color: #fff;
+    font-size: 16px;
+    float:left;
+}
+.page-navigation-block{
+    background-color: #878787;
+    padding: 5px 13px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.main-container .wrapper div#accordion.panel-group .panel {
+    overflow: inherit;
+}
+.view-price, .edit-price{
+    cursor: pointer;
+    color: #de6e62;
+}
+.options-page-navigation-left, .options-page-navigation-right{
+    float: left;
+    padding: 5px;
+    cursor: pointer;
+}
+.extras-page-navigation-left, .extras-page-navigation-right{
+    float: left;
+    padding: 5px;
+    cursor: pointer;
+}
+.prices-options-row .elehold .tdtxticon {
+    height: 26px;
+    right: 6px;
+    top: 3px;
+}
+.prices-extras-row .elehold .tdtxticon {
+    height: 26px;
+    right: 6px;
+    top: 3px;
+}
+.prices-extras-row .exttddatetxt {
+    display: inline;
+    font-size: 12px;
+    height: 30px;
+    width: 109px;
+}
+a, a:active, a:focus {
+    outline: none;
+}
+input[type="checkbox"]:focus{
+    outline:0;
+}
+input[type="button"]:focus{
+    outline:0;
+}
+.options-navigation-id, .extras-navigation-id{
+    padding-right: 5px;
+}
+#prices_option_table tr th{
+    padding:15px 11px !important;
+    font-weight: normal;}
+#prices_extra_table tr th{
+    padding:15px 11px !important;
+    font-weight: normal;}
+.daterangepicker .calendar th, .daterangepicker .calendar td{
+    min-width: 20px;
+}
+.close{
+    opacity:0.7;
+}
+.model-buttons{
+    padding-top:10px;
+}

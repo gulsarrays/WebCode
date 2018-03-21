@@ -1,0 +1,231 @@
+
+
+ALTER TABLE `tbluser` ADD `organization` VARCHAR( 200 ) NULL AFTER `fldpassword` ,
+ADD `client_id` VARCHAR( 100 ) NOT NULL AFTER `organization` ,
+ADD `consumer_limit` INT( 11 ) NOT NULL AFTER `client_id` ,
+
+
+ALTER TABLE `tbluser` 
+ADD UNIQUE (
+`client_id`
+);
+
+
+ALTER TABLE `tblinsights` ADD `client_id` VARCHAR( 100 ) NOT NULL AFTER `fldfbsharedescription` ;
+
+ALTER TABLE `tblexperts` ADD `client_id` VARCHAR( 100 ) NOT NULL AFTER `fldfbshareimage`
+
+ALTER TABLE `tblconsumers` ADD `client_id` VARCHAR( 100 ) NOT NULL AFTER `fldpromocodeid` 
+
+ALTER TABLE `tblgeneralsettings` ADD `client_id` VARCHAR( 100 ) NOT NULL AFTER `fldsettingsvalue` 
+
+ALTER TABLE `tbltopics` ADD `client_id` VARCHAR( 100 ) NOT NULL AFTER `fldiconurl`
+
+ALTER TABLE `tblappversioninfo` ADD `client_id` VARCHAR( 100 ) NOT NULL AFTER `fldplatform`
+
+UPDATE  `tblinsights` SET client_id =  'audvisor11012017'
+
+-- tblstations
+
+
+ALTER TABLE  `tblconsumers` ADD  `group_id` INT( 11 ) NOT NULL AFTER  `client_id` ;
+
+ALTER TABLE `tblinsights` ADD `group_id` INT( 11 ) NULL ;
+
+UPDATE  `tblexperts` SET client_id =  'audvisor11012017'
+
+UPDATE  `tblconsumers` SET client_id =  'audvisor11012017'
+
+UPDATE  `tbltopics` SET client_id =  'audvisor11012017'
+
+
+
+REATE TABLE IF NOT EXISTS `tblgroups` (
+  `fldid` int(11) NOT NULL AUTO_INCREMENT,
+  `fldname` varchar(2000) NOT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`fldid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf16 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `tblgroups`
+--
+
+INSERT INTO `tblgroups` (`fldid`, `fldname`, `created_at`) VALUES
+(1, 'test1', '2017-01-16 00:00:00'),
+(2, 'test2', '2017-01-16 00:00:00'),
+(3, 'test3', '2017-01-16 00:00:00');
+
+
+
+ALTER TABLE `tblgroups` ADD `is_primary` TINYINT( 1 ) NOT NULL DEFAULT '0' AFTER `fldname` ,
+ADD `client_id` VARCHAR( 100 ) NOT NULL AFTER `is_primary` ;
+
+ALTER TABLE  `tbluser` ADD  `company_name` VARCHAR( 100 ) NOT NULL AFTER  `fldusername` ;
+
+ALTER TABLE `tblinsights` ADD `fldstreamingfilename_enc` VARCHAR( 255 ) NULL ,
+ADD `fldstreamingfilenamehlsv4_enc` VARCHAR( 255 ) NULL ,
+ADD `fldstreamingurl_enc` VARCHAR( 255 ) NULL ;
+
+ALTER TABLE `tblinsights` ADD `fldstreamingfilename_short_code` VARCHAR( 255 ) NULL ,
+ADD `fldstreamingfilenamehlsv4_short_code` VARCHAR( 255 ) NULL ;
+
+
+CREATE TABLE IF NOT EXISTS `tblinboxinsights` (
+  `fldid` int(11) NOT NULL AUTO_INCREMENT,
+  `fldmessage` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fldconsumerid` int(11) NOT NULL,
+  `fldinsightid` int(11) NOT NULL,
+  `fldcreateddate` timestamp NULL DEFAULT NULL,
+  `fldmodifieddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`fldid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ;
+
+ALTER TABLE `tblinboxinsights` ADD `shared_by_consumer_id` int(11) NOT NULL AFTER `fldinsightid` ,
+ADD `mark_as_read` SMALLINT( 1 ) NOT NULL DEFAULT '0' AFTER `shared_by_consumer_id` ;
+
+ALTER TABLE `tblinboxinsights` ADD `fldisdeleted` SMALLINT( 1 ) NOT NULL DEFAULT '0' AFTER `mark_as_read` ;
+
+ALTER TABLE `tblproductid` ADD `product_type_id` INT( 3 ) NOT NULL DEFAULT '99' AFTER `fldproductid` ;
+
+ALTER TABLE `subscription_user` DROP FOREIGN KEY `subscription_user_ibfk_1` ;
+
+ALTER TABLE `subscription_user` ADD CONSTRAINT `subscription_user_ibfk_1` FOREIGN KEY ( `subscription_id` ) REFERENCES `tblproductid` (
+`fldid`
+) ON DELETE RESTRICT ON UPDATE RESTRICT ;
+
+
+CREATE TABLE IF NOT EXISTS `tblandroidpurchasetoken` (
+  `fldid` int(11) NOT NULL AUTO_INCREMENT,
+  `fldconsumerid` bigint(13) NOT NULL,
+  `fldproductid` VARCHAR( 255 ) NOT NULL ,
+  `fldpurchasetoken` varchar(255) NOT NULL,
+  PRIMARY KEY (`fldid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+ALTER TABLE `tblandroidpurchasetoken` CHANGE `fldpurchasetoken` `fldpurchasetoken` LONGTEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ;
+
+CREATE TABLE IF NOT EXISTS `tbliosreceiptdata` (
+`fldid` int( 11 ) NOT NULL AUTO_INCREMENT ,
+`fldconsumerid` bigint( 13 ) NOT NULL ,
+`fldproductid` VARCHAR( 255 ) NOT NULL ,
+`fldreceiptdata` varchar( 255 ) NOT NULL ,
+PRIMARY KEY ( `fldid` )
+) ENGINE = InnoDB DEFAULT CHARSET = latin1 AUTO_INCREMENT =1 ;
+ALTER TABLE `tbliosreceiptdata` CHANGE `fldreceiptdata` `fldreceiptdata` LONGTEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ; ;
+
+ALTER TABLE `tblandroidverifiedreceipts` ADD `purchase_date` DATETIME NOT NULL ,
+ADD `expires_date` DATETIME NOT NULL ;
+
+
+
+
+ALTER TABLE `subscription_user` DROP FOREIGN KEY `subscription_user_ibfk_2` ;
+
+ALTER TABLE `tblconsumers` ADD `is_password_reset` SMALLINT( 1 ) NOT NULL DEFAULT '1';
+
+ALTER TABLE `tblgroups` ADD `parent_id` BIGINT( 13 ) NOT NULL DEFAULT '0' AFTER `client_id` ;
+ALTER TABLE `tblgroups` ADD `client_user_id` BIGINT( 13 ) NOT NULL AFTER `client_id` ;
+
+
+CREATE TABLE IF NOT EXISTS `tblplaylists` (
+  `fldid` int(11) NOT NULL AUTO_INCREMENT,
+  `consumer_id` int(11) NOT NULL,
+  `playlist_name` varchar(255) NOT NULL,
+  `playlist_created_by_client` int(11) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`fldid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+CREATE TABLE IF NOT EXISTS `tblplaylistinsights` (
+  `fldid` bigint(13) NOT NULL AUTO_INCREMENT,
+  `playlist_id` bigint(13) NOT NULL,
+  `insight_id` bigint(13) NOT NULL,
+  PRIMARY KEY (`fldid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+ALTER TABLE `tblplaylistinsights` ADD `status` TINYINT( 1 ) NOT NULL DEFAULT '1';
+ALTER TABLE `tblplaylistinsights` ADD `list_order` INT( 5 ) NOT NULL DEFAULT '0' AFTER `insight_id` ;
+
+ALTER TABLE `tblplaylists` ADD `list_order` INT( 5 ) NOT NULL AFTER `playlist_created_by_client` ;
+
+ALTER TABLE `tblinsights` ADD `active_users_count` INT( 3 ) NOT NULL DEFAULT '0';
+
+update `tblinsights` SET fldstreamingfilename_enc = NULL, fldstreamingfilenamehlsv4_enc = NULL, fldstreamingfilename_short_code = NULL, fldstreamingfilenamehlsv4_short_code = NULL WHERE `fldstreamingfilename` IS NULL AND `fldstreamingfilenamehlsv4` IS NULL;
+
+update `tblinsights` SET fldstreamingfilename_enc = NULL, fldstreamingfilename_short_code = NULL WHERE `fldstreamingfilename` IS NULL;
+
+
+update `tblinsights` SET  fldstreamingfilenamehlsv4_enc = NULL, fldstreamingfilenamehlsv4_short_code = NULL WHERE  `fldstreamingfilenamehlsv4` IS NULL;
+
+ALTER TABLE `tblconsumers` ADD `subscription_expiry_date` TIMESTAMP NULL DEFAULT 0;
+ALTER TABLE `tblconsumers` ADD `wp_user_id` BIGINT( 13 ) NOT NULL DEFAULT '0',
+ADD `wp_site_name` VARCHAR( 255 ) NULL DEFAULT NULL ;
+ALTER TABLE `tblconsumers` ADD `chargebee_customer_id` VARCHAR( 64 ) NULL DEFAULT NULL ;
+
+
+
+ALTER TABLE `tbltopics` CHANGE `fldiconurl` `fldiconurl` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ;
+ALTER TABLE `tbltopics` ADD `cloudinary_version` VARCHAR( 255 ) NULL ;
+ALTER TABLE `tbltopics` ADD `cloudinary_public_id` TEXT NULL ;
+
+ALTER TABLE `tblexperts` CHANGE `flds3avatarurl` `flds3avatarurl` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ;
+ALTER TABLE `tblexperts` CHANGE `fldavatarurl` `fldavatarurl` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ;
+ALTER TABLE `tblexperts` CHANGE `fldbioimage` `fldbioimage` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ;
+ALTER TABLE `tblexperts` CHANGE `fldthumbimage` `fldthumbimage` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ;
+ALTER TABLE `tblexperts` CHANGE `fldpromoimage` `fldpromoimage` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ;
+ALTER TABLE `tblexperts` CHANGE `fldlistviewimage` `fldlistviewimage` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ;
+ALTER TABLE `tblexperts` CHANGE `fldfbshareimage` `fldfbshareimage` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ;
+ALTER TABLE `tblexperts` ADD `cloudinary_version` VARCHAR( 255 ) NULL ;
+ALTER TABLE `tblexperts` ADD `cloudinary_public_id` TEXT NULL ;
+
+ALTER TABLE `tblinsights` ADD `listened_count` BIGINT( 11 ) NOT NULL DEFAULT '0';
+ALTER TABLE `tblinsights` ADD `isfeatured` SMALLINT( 1 ) NOT NULL DEFAULT '0';
+
+
+ALTER TABLE `tblexperts` ADD `fldmiddlename` VARCHAR( 255 ) NOT NULL AFTER `fldfirstname` ;
+
+ALTER TABLE `tblfavourites` ADD `list_order` INT( 5 ) NOT NULL ;
+
+
+CREATE TABLE IF NOT EXISTS `tbllistenedinsights` (
+  `fldid` int(13) NOT NULL AUTO_INCREMENT,
+  `fldconsumerid` int(11) NOT NULL,
+  `fldinsightid` int(11) NOT NULL,
+  `listencount` int(11) NOT NULL DEFAULT '0',
+  `time_spent_in_sec` bigint(15) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fldid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ;
+
+ALTER TABLE `tbllistenedinsights` ADD INDEX ( `fldconsumerid` ) ;
+
+
+ALTER TABLE `tblinsights` ADD INDEX ( `fldid` ) ;
+ALTER TABLE `tblexperts` ADD INDEX ( `fldid` ) ;
+ALTER TABLE `tbltopics` ADD INDEX ( `fldid` ) ;
+ALTER TABLE `tblinsightreputation` ADD INDEX ( `fldinsightid` ) ;
+ALTER TABLE `tblconsumeranalytics` ADD INDEX ( `fldconsumerid` ) ;
+ALTER TABLE `tblplaylists` ADD INDEX ( `consumer_id` ) ;
+ALTER TABLE `tbltopicinsight` ADD INDEX ( `fldinsightid` ) ;
+ALTER TABLE `tbltopicinsight` ADD INDEX ( `fldtopicid` ) ;
+ALTER TABLE `tblplaylistinsights` ADD INDEX ( `playlist_id` ) ;
+ALTER TABLE `tblplaylistinsights` ADD INDEX ( `insight_id` ) ;
+ALTER TABLE `tblconsumers` ADD INDEX ( `fldemailid` ) ;
+
+CREATE TABLE IF NOT EXISTS `tbluserwiseallplaylistsorder` (
+  `fldid` int(11) NOT NULL AUTO_INCREMENT,
+  `consumer_id` int(11) NOT NULL,
+  `playlist_id` int(11) NOT NULL,
+  `custom_playlist_name` VARCHAR( 255 ) NOT NULL,
+  `list_order` int(5) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`fldid`),
+  KEY `consumer_id` (`consumer_id`),
+  KEY `playlist_id` (`playlist_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+ALTER TABLE `tblconsumers` ADD `total_time_spent_life_time_in_sec` BIGINT( 13 ) NOT NULL DEFAULT '0';
+
+ALTER TABLE `tblconsumers` ADD `otp_value` VARCHAR(16) NULL DEFAULT NULL AFTER `total_time_spent_life_time_in_sec`;
+ALTER TABLE `tblconsumers` ADD `is_otp_validated` SMALLINT(1) NOT NULL DEFAULT '0' AFTER `otp_value`;

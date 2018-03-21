@@ -1,0 +1,59 @@
+<div>
+  <div class="logo-container">
+    <img src="{{adminUrl}}/img/new_images/BushFireLogo.png" class="logo">
+  </div>
+  <div ng-show="showLoaderonlogin" class="adschannelsloader">
+    <img src="{{adminUrl}}/img/new_images/loading_icon.gif" class="ajax-loader"/>
+  </div>
+<div class="container-fluid background-container">
+  <div class="col-md-5  login-signup-container">
+<div class="modal"  id="errormodal"  ng-show="userentryerror">
+    <div class="alert alert-warning modal-content " >
+        <strong>Warning!</strong> Incorrect UserName or Password !!
+    </div>
+    </div>
+    <!-- Nav tabs -->
+    <ul class="nav login-signup-block" role="tablist">
+      <li role="presentation" class="col-md-12 text-center"><h4>LOGIN</h4></li>
+      <!-- <li role="presentation" class="col-md-6"><a href="#signup" aria-controls="profile" role="tab" data-toggle="tab">SIGN UP</a></li> -->
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+      <div role="tabpanel" class="login-panel" id="login">
+        <h4 class="text-center">Select Account Type</h4>
+        <form class="login-form" name ="loginform">
+            <div class="row">
+            <div class="form-inline">
+              <div class="form-group  col-md-6">
+
+                <input type="radio" class="form-control" ng-model="userModel.accountType"  checked="checked"  value="Business Account"/> <span><label class="login-type"> Business Account</label></span>
+
+              </div>
+              <div class="form-group col-md-6">
+                <input type="radio" class="form-control" ng-model="userModel.accountType" value="Ad Account"/> <span ><label class="login-type">Ad Management</label></span>
+
+              </div>
+            </div>
+            <div class="login-segment">
+            <div class="form-group  col-md-10">
+              <input type="email" ng-model="userModel.username" required=""  class="form-control form-input" placeholder="Email ID"/>
+            </div>
+            <div class="form-group  col-md-10">
+              <input type="password" ng-model="userModel.password" required=""  class="form-control form-input" placeholder="Password"/>
+            </div>
+          </div>
+            </div>
+            <button class="btn primary-btn-alt login-btn" ng-click="submitLogin()" type="submit">Login</button>
+
+        </form>
+      </div>
+
+      <div role="tabpanel" class="tab-pane" id="signup">...</div>
+    </div>
+
+  </div>
+
+ </div>
+</div>

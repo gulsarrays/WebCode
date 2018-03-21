@@ -1,0 +1,307 @@
+<div class="channeldetail-container scrolling-container" ng-controller="ModelUiController as $ctrl">
+  <div class="channel-deatils">
+    <div class="row">
+      <div class="profile-details col-md-4">
+        <div class="profile-img">
+          <img class="img-circle channel-profile-img" ng-src="{{img_url}}{{chaneldetails.channelProfileImagePath}}">
+        </div>
+        <div class="profile-details-block">
+          <span><img style="cursor:pointer" ng-click="editChannelPopup(chaneldetails.channelTitle,chaneldetails.ageGroup.ageGroupDescription )" class="icon icon-edit idit-single" src="{{adminUrl}}img/new_images/edit-icon.png">
+          </span>
+          <h3 class="channel-title">{{chaneldetails.channelTitle}}</h3>
+          <span>
+              {{chaneldetails.noOfUsersSubscribed}}
+              <span>Subscribed</span>
+          <span>
+              <span class="content-bar">&#124;</span> {{chaneldetails.ageGroup.ageGroupDescription}}
+          </span>
+          </span>
+          <div class="category-name-block">
+            <span>{{chaneldetails.category.categoryName}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8  channeldescription scrolling-container">
+        <p>
+          {{chaneldetails.channelDescription}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="uploaded-content gallery">
+
+    <div class="row upload-content-buton-block">
+      <h4 class="uploaded-content-title col-md-4">RECENTLY UPLOADED</h4>
+      <button ng-if="permissions.indexOf('upload-content') > -1" class="float-right col-md-2 btn btn-primary" ng-click="$ctrl.open(chaneldetails.channelId)">Upload Content</button>
+    </div>
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col-md-3 uploaded-block" ng-repeat="contentlisting in contentlistings">
+
+          <div class="thumbnail">
+            <div ng-show="(contentlisting.contentType == 'image/jpeg' ||
+              contentlisting.contentType == 'image/jpg' || contentlisting.contentType == 'image/png')">
+              <img  style="cursor:pointer" ng-click="removeContent(contentlisting.contentId)" class="icon icon-delete" src="{{adminUrl}}img/new_images/delete.png">
+
+              <img  style="cursor:pointer" ng-click="editContent(img_url,contentlisting.contentPath, contentlisting.contentType, contentlisting.contentTitle, contentlisting.contentDescription, contentlisting.contentId)" class="icon icon-edit" src="{{adminUrl}}img/new_images/edit-icon.png">
+
+              <button type="button" class="uploaded_content" ng-click="showDetailPopUp(img_url,contentlisting.contentPath, contentlisting.contentType, contentlisting.contentTitle, contentlisting.contentDescription)">
+                <img check-image class="content-img" ng-src="{{img_url}}{{contentlisting.contentThumbnailPath}}" style="width:100%">
+                <img class="icon" src="{{adminUrl}}img/bushimgs/img_icon.png" >
+              </button>
+
+              <div class="thumbnail-footer clearfix">
+                <p>{{contentlisting.contentTitle}}</p>
+              </div>
+            </div>
+
+            <div ng-if="(contentlisting.contentType == 'audio/mpeg' || contentlisting.contentType == 'audio/mp3' || contentlisting.contentType == 'audio/x-wav')">
+              <img  style="cursor:pointer" ng-click="removeContent(contentlisting.contentId)" class="icon icon-delete" src="{{adminUrl}}img/new_images/delete.png">
+              <img  style="cursor:pointer" ng-click="editContent(img_url,contentlisting.contentPath, contentlisting.contentType, contentlisting.contentTitle, contentlisting.contentDescription, contentlisting.contentId)" class="icon icon-edit" src="{{adminUrl}}img/new_images/edit-icon.png">
+
+              <button type="button" class="uploaded_content" ng-click="showDetailPopUp(img_url,contentlisting.contentPath, contentlisting.contentType, contentlisting.contentTitle,contentlisting.contentDescription)">
+                <img check-image class="content-img" src="{{adminUrl}}img/bushimgs/audio.png" style="width:100%">
+                <img class="icon" src="{{adminUrl}}img/bushimgs/audio_icon.png" >
+              </button>
+
+              <div class="thumbnail-footer clearfix">
+                <p>{{contentlisting.contentTitle}}</p>
+              </div>
+            </div>
+
+            <div ng-if="(contentlisting.contentType == 'video/mp4' || contentlisting.contentType == 'video/quicktime')">
+              <img style="cursor:pointer" ng-click="removeContent(contentlisting.contentId)" class="icon icon-delete" src="{{adminUrl}}img/new_images/delete.png">
+              <img  style="cursor:pointer" ng-click="editContent(img_url,contentlisting.contentPath, contentlisting.contentType, contentlisting.contentTitle, contentlisting.contentDescription, contentlisting.contentId)" class="icon icon-edit" src="{{adminUrl}}img/new_images/edit-icon.png">
+
+              <button type="button" class="uploaded_content" ng-click="showDetailPopUp(img_url,contentlisting.contentPath, contentlisting.contentType, contentlisting.contentTitle, contentlisting.contentDescription)">
+                <img check-image  class="content-img" src="{{adminUrl}}img/bushimgs/channel-video-icon.png" style="width:100%">
+                <img class="icon" src="{{adminUrl}}img/bushimgs/video_icon_small.png" >
+              </button>
+              <div class="thumbnail-footer clearfix">
+                <p>{{contentlisting.contentTitle}}</p>
+
+              </div>
+            </div>
+
+            <!-- <div ng-if=['image/png','image/jpg','image/jpeg','audio/mpeg','audio/mp3','video/mp4', 'audio/x-wav'].indexOf(contentlisting.contentType) ==-1 > -->
+
+            <div ng-show="(contentlisting.contentType) == 'text' ">
+              <img  style="cursor:pointer" ng-click="removeContent(contentlisting.contentId)" class="icon icon-delete" src="{{adminUrl}}img/new_images/delete.png">
+              <img  style="cursor:pointer" ng-click="editContent(img_url,contentlisting.contentPath, contentlisting.contentType, contentlisting.contentTitle, contentlisting.contentText, contentlisting.contentId)" class="icon icon-edit" src="{{adminUrl}}img/new_images/edit-icon.png">
+
+              <button type="button" class="uploaded_content" ng-click="showDetailPopUp(img_url,contentlisting.contentPath, contentlisting.contentType, contentlisting.contentTitle, contentlisting.contentText)">
+                  <img check-image class="content-img" src="{{adminUrl}}img/bushimgs/text.png" style="width:100%;height:145px;">
+                  <img class="icon" src="{{adminUrl}}img/bushimgs/text_icon.png" >
+              </button>
+              <div class="thumbnail-footer clearfix">
+                <p>{{contentlisting.contentTitle}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-demo">
+    <script type="text/ng-template" id="myModalContent.html">
+          <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+              <h3 class="modal-title popuptitle text-center" id="modal-title">Upload Content</h3>
+          </div>
+          <div class="modal-body" id="modal-body">
+              <form name="myForm">
+                      <label class="popupsub">Content Type</label><br/>
+                       <label class="radio-inline uploadselect">
+                        <input type="radio" ng-model='upload_type' class="upload-radio " ng-value='"upld_txt"' name="filetype" ng-change='changeContentType("upld_txt")'>Text
+                      </label>
+                      <label class="radio-inline uploadselect">
+                        <input type="radio" ng-model='upload_type' class="upload-radio " ng-value='"upld_media"' name="filetype" ng-change='changeContentType("upld_media")'>Image/ Video/ Audio
+                      </label>
+                     <br/><br>
+
+                  <div ng-show="upload_type == 'upld_media'">
+                      <label for="file" class="popupsub">Add your Image / Video / Audio</label><br/>
+                      <div class="fileUpload btn primary-btn-alt col-md-4">
+                         <span>Choose File</span>
+                         <input id="file" type="file" ngf-select ng-model="filesUpload" ng-change="uploadingchannelimages(this)" name="file" accept="image/*,audio/*,video/*" ngf-max-size="50MB" ngf-model-invalid="errorFile" class="pull-left upload channel-imagecon" ng-model-instant onchange="angular.element(this).scope().setFiles(this)" required />
+                       </div>
+                       <div class="filename-uploaded col-sm-6 col-md-3"  ng-if="files[0].name != null">                         
+                             <img src="{{imageUrl}}" alt = "Uploaded image thumbnail"  width="100%" height="150" ng-if="imageUrl != null">                 
+                             <div class="fileuploaded_popup"> <span class="filename">
+                             
+                                {{ files[0].name | limitTo: 20 }}{{files[0].name.length > 20 ? '...' : ''}}
+                             </span><span><i ng-show="uContentModel" ng-click="clearfile()" class="glyphicon glyphicon-remove file-remove" aria-hidden="true"></i></span></div>         
+                       </div>
+                      <div class="clearfix"></div>
+                      <div ng-show="progressVisible" style="margin-top: 15px;">
+                          <div class="percent">{{progress}}%</div>
+                          <div class="progress-bar">
+                              <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
+                          </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      <i ng-show="myForm.file.$error.required">*required</i><br>
+                      <i ng-show="myForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+
+                  </div>
+                  
+                  <label for="title" class="popupsub">Title</label>
+                  <input type="text" ng-model="uContentModel.contentTitle" class="form-control" id="title" required maxlength="50" ng-keyup="checkCharactersLeft($event)">
+                  <span class="pull-right">{{char_remaining}} characters left. </span>
+                  
+                  <div ng-show="upload_type == 'upld_media'">
+                      <label for="Desc" class="popupsub">Description</label>
+                      <textarea ng-model="uContentModel.contentDescription" class="form-control" id="Desc"></textarea>
+                  </div>
+
+                  <div ng-show="upload_type != 'upld_media'">
+                      <label for="Desc" class="popupsub">Description</label>
+                      <textarea ng-model="uContentModel.contentText" class="form-control" id="Ctext" required></textarea>
+                  </div>
+
+          <!-- </div> -->
+          <div class="modal-footer" style="border-top: 0px solid #000;">
+          <!-- ng-disabled="fUpload_Success != false" -->
+              <button ng-click="uploadsubmitForm(channelId)" type="submit" class="btn primary-btn-alt" >Save</button>
+              <button type="button" ng-click="cancel()" class="btn primary-cancel-btn"  >Cancel</button>
+              <span ng-show="uContentModel.result">Upload Successful</span>
+              <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+              <!--<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+              <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>-->
+          </div>
+              </form>
+          </div>
+      </script>
+</div>
+</div>
+<div class="UploadedContentPopupOverlay scrolling-container" ng-show="UploadContentShow==true">
+<!-- ng-click="hideDetailPopUp($event, CType)" -->
+    <div class="UploadContentPopUp scrollingpart">
+    <span class="glyphicon glyphicon-remove close_popUp float-right" ng-click="hideDetailPopUp($event, CType)" aria-hidden="true"></span>
+        <h4 class="text-center popuptitle">{{UploadContentTitle}}</h4>
+
+        <hr>
+        <img ng-src="{{uploadedImg_path}}" ng-show="CType == 'image'">
+        <audio controls="true" src="{{uploadedImg_path}}" ng-if="CType == 'audio'">
+        </audio>
+        <video width="550" height="400" preload="auto" ng-if="CType == 'video'" loop="true" poster="" src="{{uploadedImg_path}}"   controls="true" ng-show="CType == 'video'" style="background: url(../img/bushimgs/video_icon.png) no-repeat center;">
+        Your browser does not support the video tag.
+        </video>
+       <hr ng-show="CType == 'image'">
+       <hr ng-show="CType == 'video'">
+       <hr ng-show="CType == 'audio'">
+         <p class="content-text popup-content scrolling-container">{{UploadContentText}}</p>
+    </div>
+</div>
+
+<div class="EditContentPopupOverlay scrolling-container" ng-show="EditContentShow==true">
+  <div class="UploadContentPopUp scrollingpart">
+    <span class="glyphicon glyphicon-remove close_popUp float-right" ng-click="hideDetailPopUp($event, CType)" aria-hidden="true"></span>
+    <h4 class="text-center">Edit Content</h4>
+    <hr>
+
+    <form name="editchannelcontentForm" id="editchannellform">
+      <img ng-src="{{uploadedImg_path}}" ng-show="CType == 'image'">
+      <audio controls="true" src="{{uploadedImg_path}}" ng-if="CType == 'audio'">
+      </audio>
+      <video width="550" height="400" preload="auto" ng-if="CType == 'video'" loop="true" poster="" src="{{uploadedImg_path}}" controls="true" ng-show="CType == 'video'" style="background: url(../img/bushimgs/video_icon.png) no-repeat center;">
+      Your browser does not support the video tag.
+      </video>
+      <div style="clear:both"></div>
+      <hr ng-show="CType == 'image'">
+       <hr ng-show="CType == 'video'">
+       <hr ng-show="CType == 'audio'">
+      <label for="title" class="popupsub">Title</label>
+      <input type="text" ng-model="editContentModel.contentTitle" class="form-control" required maxlength="50" value="">
+      <div ng-if="CType !== 'text'">
+      <label for="Desc" class="popupsub">Content Description</label>
+      <textarea ng-model="editContentModel.contentDescription" class="form-control" required></textarea>
+      </div>      
+      
+      <div ng-if="CType == 'text'">
+        <label for="Desc" class="popupsub">Content Text</label>
+        <textarea ng-model="editContentModel.contentText" class="form-control" required></textarea>
+      </div>
+       
+      <div class="popup-footer">
+         <button type="submit" ng-click="updateContent()" class="btn primary-btn-alt">Update</button>
+         <button type="button" ng-click="hideDetailPopUp($event, CType)" class="btn primary-cancel-btn">Cancel</button>
+      </div>
+      </form>
+
+    </div>
+</div>
+
+
+<!-- Edit channel info -->
+<div class="EditContentPopupOverlay scrolling-container" ng-show="EditChannelShow==true">
+  <div class="UploadContentPopUp scrollingpart">
+    <span class="glyphicon glyphicon-remove close_popUp float-right" ng-click="hideContentEdit($event)" aria-hidden="true"></span>
+    <h4 class="text-center popuptitle">Edit Channel</h4>
+    <hr>
+
+    <form name="editchannelForm" id="editchannellform" class="firsteditchannelform">       
+      
+      <div class="form-group">
+        <label class="editchannell popupsub">Channel Name</label>
+        <input class="form-control editinput" type="text" name="channelname" ng-model="editChannel.channelTitle" value="" required>
+      </div>
+
+      <div class="form-group">
+        <label class="editchannell popupsub">Channel Description</label>
+        <input class="form-control editinput" type="text" name="channeldesc" ng-model="editChannel.channelDescription" value="" required>
+      </div>
+
+      <div class="form-group">
+        <label class="editchannell popupsub">Channel Category</label>
+        <select class="form-control editinput" ng-model="editChannel.categoryId" id="sel1" required>
+        <div class="cat">
+         <option value="">Category</option>
+         <option ng-repeat="categorie in categories" value="{{categorie.categoryId}}">{{categorie.categoryName}}</option>
+         </div>
+        </select>
+      </div>
+
+       <div class="form-group">
+        <label class="editchannell popupsub">Age Group</label>
+        <select class="form-control editinput" ng-model="editChannel.ageGroupId" required>
+          <option value="">Age</option>
+          <option ng-repeat="age in ages" value="{{age.ageGroupId}}">{{age.ageGroupDescription}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+                <div id="firsteditchannel">
+                      <div class="fileUpload btn primary-btn-alt col-md-4">
+                         <span>Choose File</span>
+                         <input id="file" type="file" ngf-select ng-model="filesUpload" ng-change="uploadingchannelimages(this)" name="file" accept="image/*,audio/*,video/*" ngf-max-size="50MB" ngf-model-invalid="errorFile" class="pull-left upload channel-imagecon" ng-model-instant onchange="angular.element(this).scope().setFiles(this)" />
+                       </div>
+                       <div class="filename-uploaded col-sm-6 col-md-3"  ng-if="files[0].name != null">                                          
+                             <div class="fileuploaded_popup"> <span class="filename">{{files[0].name}}</span><span><i ng-click="clearfile()" class="glyphicon glyphicon-remove file-remove" aria-hidden="true"></i></span></div>         
+                       </div>
+                      <div class="clearfix"></div>
+                      <div ng-show="progressVisible" style="margin-top: 15px;">
+                          <div class="percent">{{progress}}%</div>
+                          <div class="progress-bar">
+                              <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
+                          </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      <!-- <i ng-show="editchannelForm.file.$error.required">*required</i><br> -->
+                      <i ng-show="editchannelForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                </div>
+
+
+      </div>
+
+      <div class="popup-footer">
+         <button type="submit" ng-click="updateChannel()" class="btn primary-btn-alt">Update</button>
+         <button type="button" ng-click="hideContentEdit($event)" class="btn primary-cancel-btn">Cancel</button>
+      </div>
+      </form>
+
+    </div>
+</div>

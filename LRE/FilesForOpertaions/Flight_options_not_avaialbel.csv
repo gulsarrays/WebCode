@@ -1,0 +1,171 @@
+ServiceName,OptionName,REGIONNAME,ServiceTSID,OptionTSID,SERVICEOPTIONSTATUSNAME,ServiceType
+Nagpur - Kolkata,Economy Class Flight - (LCC),Nagpur,43626,70357,Unavailable,Flight
+Pondicherry - Bangalore,Economy Class Flight - (LCC),Pondicherry,39005,59981,Unavailable,Flight
+Bangalore - Pondicherry,Economy Class Flight - (LCC),Bangalore,39004,59978,Unavailable,Flight
+Mangalore - Bangalore,Economy Class Flight - (LCC),Mangalore,31818,50437,Unavailable,Flight
+Guwahati - Delhi,Economy Class Flight - (LCC),Guwahati,2633,47709,Unavailable,Flight
+Hyderabad - Mumbai - Trivandrum,Economy Class Flight - (LCC),Hyderabad,2563,47708,Unavailable,Flight
+Kolkata - Bhubaneswar,Economy Class Flight - (LCC),Kolkata,2542,47317,Unavailable,Flight
+Kolkata - Patna,Economy Class Flight - (LCC),Kolkata,2539,47312,Unavailable,Flight
+Mumbai - Hyderabad,Economy Class Flight - (LCC),Mumbai,2189,47311,Unavailable,Flight
+Mumbai - Indore,Economy Class Flight - (LCC),Mumbai,2191,47310,Unavailable,Flight
+Kolkata - Ahmedabad - Pune,Economy Class Flight - (LCC),Kolkata,2537,47309,Unavailable,Flight
+Mumbai - Jaipur,Economy Class Flight - (LCC),Mumbai,2193,47308,Unavailable,Flight
+Mumbai - Kolkata - Guwahati,Economy Class Flight - (LCC),Mumbai,2184,47307,Unavailable,Flight
+Mumbai - Delhi,Economy Class Flight - (LCC),Mumbai,2182,47304,Unavailable,Flight
+Mumbai - Coimbatore,Economy Class Flight - (LCC),Mumbai,2181,47303,Unavailable,Flight
+Kolkata - Mumbai,Economy Class Flight - (LCC),Kolkata,2532,47297,Unavailable,Flight
+Kolkata - Hyderabad,Economy Class Flight - (LCC),Kolkata,2529,47294,Unavailable,Flight
+Kolkata - Guwahati,Economy Class Flight - (LCC),Kolkata,2527,47293,Unavailable,Flight
+Mumbai - Bangalore,Economy Class Flight - (LCC),Mumbai,2165,47283,Unavailable,Flight
+Kolkata - Delhi,Economy Class Flight - (LCC),Kolkata,2524,47282,Unavailable,Flight
+Kolkata - Bangalore,Economy Class Flight - (LCC),Kolkata,2509,47279,Unavailable,Flight
+Madurai - Mumbai/Chennai - Delhi,Economy Class Flight - (LCC),Madurai,8629,47276,Unavailable,Flight
+Madurai - Bangalore,Economy Class Flight - (LCC),Madurai,2775,47275,Unavailable,Flight
+Jabalpur - Delhi,Economy Class Flight - (LCC),Jabalpur,4429,47270,Unavailable,Flight
+Port Blair - Chennai,Economy Class Flight - (LCC),Port Blair,2638,47269,Unavailable,Flight
+Port Blair - Kolkata - Delhi,Economy Class Flight - (LCC),Port Blair,2631,47268,Unavailable,Flight
+Port Blair - Chennai - Bangalore,Economy Class Flight - (LCC),Port Blair,2627,47267,Unavailable,Flight
+Port Blair - Kolkata,Economy Class Flight - (LCC),Port Blair,2622,47266,Unavailable,Flight
+Dehradun - Lucknow,Economy Class Flight - (LCC),Dehradun,12366,47265,Unavailable,Flight
+Varanasi - Delhi/Mumbai - Chennai,Economy Class Flight - (LCC),Varanasi,4760,47263,Unavailable,Flight
+Madurai - Chennai - Cochin,Economy Class Flight - (LCC),Madurai,2770,47260,Unavailable,Flight
+Varanasi - Kathmandu,Economy Class Flight - (LCC),Varanasi,2459,47259,Unavailable,Flight
+Varanasi - Mumbai/Delhi - Bangalore,Economy Class Flight - (LCC),Varanasi,2452,47257,Unavailable,Flight
+Madurai - Chennai - Goa,Economy Class Flight - (LCC),Madurai,2768,47256,Unavailable,Flight
+Varanasi - Mumbai,Economy Class Flight - (LCC),Varanasi,2449,47255,Unavailable,Flight
+Vadodra - Delhi,Economy Class Flight - (LCC),Vadodara,2843,47254,Unavailable,Flight
+Vadodra - Mumbai,Economy Class Flight - (LCC),Vadodara,2842,47253,Unavailable,Flight
+Udaipur - Mumbai - Hyderabad,Economy Class Flight - (LCC),Udaipur,2427,47249,Unavailable,Flight
+Udaipur - Chennai,Economy Class Flight - (LCC),Udaipur,2424,47248,Unavailable,Flight
+Udaipur - Bangalore,Economy Class Flight - (LCC),Udaipur,2417,47241,Unavailable,Flight
+Trivandrum - Hyderabad,Economy Class Flight - (LCC),Trivandrum,2152,47239,Unavailable,Flight
+Trivandrum - Delhi,Economy Class Flight - (LCC),Trivandrum,2147,47238,Unavailable,Flight
+Trivandrum - Chennai,Economy Class Flight - (LCC),Trivandrum,2140,47237,Unavailable,Flight
+Trivandrum - Cochin,Economy Class Flight - (LCC),Trivandrum,2136,47236,Unavailable,Flight
+Trivandrum - Bangalore,Economy Class Flight - (LCC),Trivandrum,2103,47235,Unavailable,Flight
+Pune - Delhi,Economy Class Flight - (LCC),Pune,2301,47231,Unavailable,Flight
+Pune - Delhi - Udaipur,Economy Class Flight - (LCC),Pune,2299,47230,Unavailable,Flight
+Pune - Chennai,Economy Class Flight - (LCC),Pune,2296,47229,Unavailable,Flight
+Pune - Bangalore,Economy Class Flight - (LCC),Pune,2294,47228,Unavailable,Flight
+Nagpur - Indore,Economy Class Flight - (LCC),Nagpur,14490,47217,Unavailable,Flight
+Nagpur - Bangalore,Economy Class Flight - (LCC),Nagpur,7042,47216,Unavailable,Flight
+Nagpur - Chennai - Cochin,Economy Class Flight - (LCC),Nagpur,2287,47215,Unavailable,Flight
+Nagpur - Delhi,Economy Class Flight - (LCC),Nagpur,2263,47201,Unavailable,Flight
+Mumbai - Male,Economy Class Flight - (LCC),Mumbai,14953,47198,Unavailable,Flight
+Mumbai - Amritsar,Economy Class Flight - (LCC),Mumbai,14486,47195,Unavailable,Flight
+Mumbai - Chandigarh,Economy Class Flight - (LCC),Mumbai,14480,47193,Unavailable,Flight
+Mumbai - Bangalore/Cochin - Male,Economy Class Flight - (LCC),Mumbai,2852,47178,Unavailable,Flight
+Mumbai - Kathmandu,Economy Class Flight - (LCC),Mumbai,2850,47172,Unavailable,Flight
+Mumbai - Ahmedabad,Economy Class Flight - (LCC),Mumbai,2224,47152,Unavailable,Flight
+Chennai - Coimbatore,Economy Class Flight - (LCC),Chennai,2837,46931,Unavailable,Flight
+Chennai - Madurai,Economy Class Flight - (LCC),Chennai,2835,46930,Unavailable,Flight
+Goa - Mumbai/Delhi - Ahmedabad,Economy Class Flight - (LCC),Goa,2649,46896,Unavailable,Flight
+Delhi - Kathmandu,Economy Class Flight - (LCC),Delhi,2408,46893,Unavailable,Flight
+Delhi - Vadodara,Economy Class Flight - (LCC),Delhi,2390,46870,Unavailable,Flight
+Goa - Hyderabad,Economy Class Flight - (LCC),Goa,2654,46869,Unavailable,Flight
+Goa - Bangalore,Economy Class Flight - (LCC),Goa,2662,46868,Unavailable,Flight
+Delhi - Mumbai/Bangalore - Trivandrum,Economy Class Flight - (LCC),Delhi,2387,46866,Unavailable,Flight
+Delhi - Pune,Economy Class Flight - (LCC),Delhi,2386,46865,Unavailable,Flight
+Delhi - Patna,Economy Class Flight - (LCC),Delhi,2383,46864,Unavailable,Flight
+Delhi - Nagpur,Economy Class Flight - (LCC),Delhi,2381,46863,Unavailable,Flight
+Delhi - Mumbai,Economy Class Flight - (LCC),Delhi,2379,46861,Unavailable,Flight
+Delhi - Kolkata,Economy Class Flight - (LCC),Delhi,2369,46860,Unavailable,Flight
+Delhi - Hyderabad,Economy Class Flight - (LCC),Delhi,2363,46853,Unavailable,Flight
+Delhi - Indore,Economy Class Flight - (LCC),Delhi,2361,46852,Unavailable,Flight
+Delhi - Guwahati,Economy Class Flight - (LCC),Delhi,2355,46847,Unavailable,Flight
+Delhi - Chennai,Economy Class Flight - (LCC),Delhi,2353,46841,Unavailable,Flight
+Delhi - Bangalore,Economy Class Flight - (LCC),Delhi,2341,46836,Unavailable,Flight
+Goa - Chennai,Economy Class Flight - (LCC),Goa,2669,46831,Unavailable,Flight
+Goa - Chennai/Bangalore - Trivandrum,Economy Class Flight - (LCC),Goa,2673,46828,Unavailable,Flight
+Guwahati - Bagdogra,Economy Class Flight - (LCC),Guwahati,2630,46824,Unavailable,Flight
+Guwahati - Kolkata,Economy Class Flight - (LCC),Guwahati,2639,46823,Unavailable,Flight
+Kolkata - Chennai,Economy Class Flight - (LCC),Kolkata,2508,46822,Unavailable,Flight
+Chennai - Trivandrum,Economy Class Flight - (LCC),Chennai,2828,46821,Unavailable,Flight
+Guwahati - Kolkata - Mumbai,Economy Class Flight - (LCC),Guwahati,2642,46820,Unavailable,Flight
+Chennai - Pune,Economy Class Flight - (LCC),Chennai,2825,46818,Unavailable,Flight
+Kolkata - Andaman Islands,Economy Class Flight - (LCC),Kolkata,2500,46817,Unavailable,Flight
+Kolkata - Mumbai - Cochin,Economy Class Flight - (LCC),Kolkata,2497,46815,Unavailable,Flight
+Hyderabad - Cochin,Economy Class Flight - (LCC),Hyderabad,2554,46814,Unavailable,Flight
+Chennai - Mumbai,Economy Class Flight - (LCC),Chennai,2822,46813,Unavailable,Flight
+Hyderabad - Udaipur,Economy Class Flight - (LCC),Hyderabad,2557,46812,Unavailable,Flight
+Chennai - Kolkata,Economy Class Flight - (LCC),Chennai,2820,46810,Unavailable,Flight
+Chennai - Mumbai/Delhi - Jaipur,Economy Class Flight - (LCC),Chennai,2814,46809,Unavailable,Flight
+Chennai - Hyderabad,Economy Class Flight - (LCC),Chennai,2809,46808,Unavailable,Flight
+Chennai - Goa,Economy Class Flight - (LCC),Chennai,2805,46807,Unavailable,Flight
+Chennai - Delhi,Economy Class Flight - (LCC),Chennai,2801,46806,Unavailable,Flight
+Chennai - Port Blair,Economy Class Flight - (LCC),Chennai,2797,46805,Unavailable,Flight
+Cochin - Chennai,Economy Class Flight - (LCC),Cochin,2056,46804,Unavailable,Flight
+Chennai - Cochin,Economy Class Flight - (LCC),Chennai,2793,46802,Unavailable,Flight
+Chennai - Ahmedabad,Economy Class Flight - (LCC),Chennai,2789,46801,Unavailable,Flight
+Hyderabad - Mumbai - Goa,Economy Class Flight - (LCC),Hyderabad,2560,46799,Unavailable,Flight
+Hyderabad - Jaipur,Economy Class Flight - (LCC),Hyderabad,2565,46798,Unavailable,Flight
+Chennai - Negombo,Economy Class Flight - (LCC),Chennai,2764,46794,Unavailable,Flight
+Hyderabad - Mumbai - Aurangabad,Economy Class Flight - (LCC),Hyderabad,2586,46793,Unavailable,Flight
+Hyderabad - Bangalore,Economy Class Flight - (LCC),Hyderabad,2591,46792,Unavailable,Flight
+Chandigarh - Delhi,Economy Class Flight - (LCC),Chandigarh,2730,46790,Unavailable,Flight
+Kathmandu - Bagdogra,Economy Class Flight - (LCC),Kathmandu,29425,46772,Unavailable,Flight
+Bagdogra - Kathmandu,Economy Class Flight - (LCC),Bagdogra,29423,46767,Unavailable,Flight
+Kolkata - Bangalore/Mumbai - Goa,Economy Class Flight - (LCC),Kolkata,2488,46690,Unavailable,Flight
+Guwahati - Mumbai,Economy Class Flight - (LCC),Kaziranga,2755,46668,Unavailable,Flight
+Mumbai - Chennai,Economy Class Flight - (LCC),Mumbai,2216,46649,Unavailable,Flight
+Mumbai - Vadodara,Economy Class Flight - (LCC),Mumbai,2214,46647,Unavailable,Flight
+Trivandrum - Mumbai,Economy Class Flight - (LCC),Trivandrum,2142,46633,Unavailable,Flight
+Mumbai - Trivandrum,Economy Class Flight - (LCC),Mumbai,2210,46630,Unavailable,Flight
+Nagpur - Mumbai,Economy Class Flight - (LCC),Nagpur,2278,46625,Unavailable,Flight
+Mumbai - Nagpur,Economy Class Flight - (LCC),Mumbai,2206,46623,Unavailable,Flight
+Mangalore - Mumbai,Economy Class Flight - (LCC),Mangalore,10713,46622,Unavailable,Flight
+Mumbai - Mangalore,Economy Class Flight - (LCC),Mumbai,2203,46621,Unavailable,Flight
+Mumbai - Kolkata,Economy Class Flight - (LCC),Mumbai,2200,46618,Unavailable,Flight
+Delhi - Ahmedabad,Economy Class Flight - (LCC),Delhi,2337,46588,Unavailable,Flight
+Delhi - Bhubaneswar,Economy Class Flight - (LCC),Delhi,2335,46585,Unavailable,Flight
+Delhi - Chennai - Madurai,Economy Class Flight - (LCC),Delhi,2331,46578,Unavailable,Flight
+Delhi - Jabalpur,Economy Class Flight - (LCC),Delhi,2328,46577,Unavailable,Flight
+Delhi - Lucknow,Economy Class Flight - (LCC),Delhi,2322,46415,Unavailable,Flight
+Delhi - Jaipur,Economy Class Flight - (LCC),Delhi,2317,46414,Unavailable,Flight
+Delhi - Chandigarh,Economy Class Flight - (LCC),Delhi,2315,46413,Unavailable,Flight
+Coimbatore - Mumbai,Economy Class Flight - (LCC),Coimbatore,2849,46251,Unavailable,Flight
+Coimbatore - Chennai,Economy Class Flight - (LCC),Coimbatore,2847,46249,Unavailable,Flight
+Cochin - Male,Economy Class Flight - (LCC),Cochin,2851,46246,Unavailable,Flight
+Goa - Bangalore - Cochin,Economy Class Flight - (LCC),Goa,2651,46219,Unavailable,Flight
+Bangalore - Negombo,Economy Class Flight - (LCC),Bangalore,2046,46154,Unavailable,Flight
+Bangalore - Delhi - Chandigarh,Economy Class Flight - (LCC),Bangalore,2040,46140,Unavailable,Flight
+Bangalore - Delhi - Varanasi,Economy Class Flight - (LCC),Bangalore,2039,46139,Unavailable,Flight
+Jaipur - Kolkata,Economy Class Flight - (LCC),Jaipur,22012,46138,Unavailable,Flight
+Jaipur - Delhi - Varanasi,Economy Class Flight - (LCC),Jaipur,6141,46137,Unavailable,Flight
+Bangalore - Kolkata - Bagdogra,Economy Class Flight - (LCC),Bangalore,2038,46136,Unavailable,Flight
+Bangalore - Mumbai - Udaipur,Economy Class Flight - (LCC),Bangalore,2037,46135,Unavailable,Flight
+Jaipur - Hyderabad,Economy Class Flight - (LCC),Jaipur,2785,46134,Unavailable,Flight
+Bangalore - Trivandrum,Economy Class Flight - (LCC),Bangalore,2036,46133,Unavailable,Flight
+Bangalore - Pune,Economy Class Flight - (LCC),Bangalore,2035,46126,Unavailable,Flight
+Bangalore - Kolkata,Economy Class Flight - (LCC),Bangalore,2033,46120,Unavailable,Flight
+Bangalore - Delhi,Economy Class Flight - (LCC),Bangalore,2031,46118,Unavailable,Flight
+Bangalore - Mumbai,Economy Class Flight - (LCC),Bangalore,2030,46117,Unavailable,Flight
+Jaipur - Mumbai,Economy Class Flight - (LCC),Jaipur,2743,46116,Unavailable,Flight
+Bangalore - Mangalore,Economy Class Flight - (LCC),Bangalore,2027,46111,Unavailable,Flight
+Jaipur - Chennai,Economy Class Flight - (LCC),Jaipur,2740,46110,Unavailable,Flight
+Bangalore - Chennai - Madurai,Economy Class Flight - (LCC),Bangalore,2021,46109,Unavailable,Flight
+Jaipur - Bangalore,Economy Class Flight - (LCC),Jaipur,2738,46108,Unavailable,Flight
+Bangalore - Hyderabad,Economy Class Flight - (LCC),Bangalore,2017,46107,Unavailable,Flight
+Jaipur - Delhi,Economy Class Flight - (LCC),Jaipur,2735,46106,Unavailable,Flight
+Bangalore - Goa,Economy Class Flight - (LCC),Bangalore,2015,46105,Unavailable,Flight
+Jaipur - Delhi/Mumbai - Ahmedabad,Economy Class Flight - (LCC),Jaipur,2731,46104,Unavailable,Flight
+Cochin - Bangalore,Economy Class Flight - (LCC),Cochin,2051,46103,Unavailable,Flight
+Bangalore - Cochin,Economy Class Flight - (LCC),Bangalore,2013,46102,Unavailable,Flight
+Chennai - Bangalore,Economy Class Flight - (LCC),Chennai,2833,46101,Unavailable,Flight
+Bangalore - Chennai,Economy Class Flight - (LCC),Bangalore,2011,46099,Unavailable,Flight
+Cochin - Trivandrum,Economy Class Flight - (LCC),Cochin,2059,46096,Unavailable,Flight
+Bagdogra - Guwahati,Economy Class Flight - (LCC),Bagdogra,14109,46043,Unavailable,Flight
+Bagdogra - Bangalore,Economy Class Flight - (LCC),Bagdogra,2546,46040,Unavailable,Flight
+Indore - Mumbai,Economy Class Flight - (LCC),Indore,2700,46020,Unavailable,Flight
+Indore - Delhi,Economy Class Flight - (LCC),Indore,2699,46017,Unavailable,Flight
+Hyderabad - Bhubaneswar,Economy Class Flight - (LCC),Hyderabad,2628,46015,Unavailable,Flight
+Hyderabad - Mumbai,Economy Class Flight - (LCC),Hyderabad,2625,46011,Unavailable,Flight
+Hyderabad - Kolkata,Economy Class Flight - (LCC),Hyderabad,2623,46009,Unavailable,Flight
+Hyderabad - Delhi,Economy Class Flight - (LCC),Hyderabad,2621,46008,Unavailable,Flight
+Hyderabad - Chennai,Economy Class Flight - (LCC),Hyderabad,2593,46006,Unavailable,Flight
+Ahmedabad - Goa,Economy Class Flight - (LCC),Ahmedabad,14483,45995,Unavailable,Flight
+Ahmedabad - Delhi,Economy Class Flight - (LCC),Ahmedabad,14482,45993,Unavailable,Flight
+Ahmedabad - Bangalore,Economy Class Flight - (LCC),Ahmedabad,14481,45992,Unavailable,Flight
+Ahmedabad - Mumbai,Economy Class Flight - (LCC),Ahmedabad,7764,45990,Unavailable,Flight
+Ahmedabad - Jaipur,Economy Class Flight - (LCC),Ahmedabad,2686,45982,Unavailable,Flight
