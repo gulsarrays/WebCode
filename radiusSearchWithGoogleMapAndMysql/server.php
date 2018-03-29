@@ -7,7 +7,7 @@ class RadiusSearch {
     static $_dbUserName = 'homestead';
     static $_dbUserPwd = 'secret';
 
-    static public function getPlantDataWithinRedius($fLat, $fLon, $dist) {
+    static public function getPlantDataWithinRedius($fLat, $fLon, $radius) {
         $con = mysqli_connect(self::$_dbHost, self::$_dbUserName, self::$_dbUserPwd);
 
         // connect to database
@@ -17,19 +17,30 @@ class RadiusSearch {
 
         mysqli_select_db($con, self::$_dbName);
 
-        // search by kilometers =  6371;
+        // search by kilometers =  6371
         // search by miles =  3959
         
-        $qry = "SELECT
-`id`,
-`plant_name`,
-ACOS( SIN( RADIANS( `lat` ) ) * SIN( RADIANS( $fLat ) ) + COS( RADIANS( `lat` ) )
-* COS( RADIANS( $fLat )) * COS( RADIANS( `lng` ) - RADIANS( $fLon )) ) * 6371 AS `distance`
-FROM `plant`
-WHERE
-ACOS( SIN( RADIANS( `lat` ) ) * SIN( RADIANS( $fLat ) ) + COS( RADIANS( `lat` ) )
-* COS( RADIANS( $fLat )) * COS( RADIANS( `lng` ) - RADIANS( $fLon )) ) * 6371 < $dist
-ORDER BY `distance` ";
+        // Search the rows in the markers table
+        $qry = sprintf("SELECT id, plant_name, lat, lng, ( 6371 * acos( cos( radians('%s') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('%s') ) + sin( radians('%s') ) * sin( radians( lat ) ) ) ) AS distance FROM plant HAVING distance < '%s' ORDER BY distance ",
+          mysqli_real_escape_string($con,$fLat),
+          mysqli_real_escape_string($con,$fLon),
+          mysqli_real_escape_string($con,$fLat),
+          mysqli_real_escape_string($con,$radius));
+        $result = mysqli_query($con, $qry) or die(mysqli_error($con));
+
+
+
+        
+//        $qry = "SELECT
+//`id`,
+//`plant_name`,
+//ACOS( SIN( RADIANS( `lat` ) ) * SIN( RADIANS( $fLat ) ) + COS( RADIANS( `lat` ) )
+//* COS( RADIANS( $fLat )) * COS( RADIANS( `lng` ) - RADIANS( $fLon )) ) * 6371 AS `distance`
+//FROM `plant`
+//WHERE
+//ACOS( SIN( RADIANS( `lat` ) ) * SIN( RADIANS( $fLat ) ) + COS( RADIANS( `lat` ) )
+//* COS( RADIANS( $fLat )) * COS( RADIANS( `lng` ) - RADIANS( $fLon )) ) * 6371 < $radius
+//ORDER BY `distance` ";
 
         $result = mysqli_query($con, $qry) or die(mysqli_error($con));
         $count = mysqli_num_rows($result);
