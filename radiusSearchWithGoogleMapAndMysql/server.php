@@ -17,16 +17,18 @@ class RadiusSearch {
 
         mysqli_select_db($con, self::$_dbName);
 
-
+        // search by kilometers =  6371;
+        // search by miles =  3959
+        
         $qry = "SELECT
 `id`,
 `plant_name`,
 ACOS( SIN( RADIANS( `lat` ) ) * SIN( RADIANS( $fLat ) ) + COS( RADIANS( `lat` ) )
-* COS( RADIANS( $fLat )) * COS( RADIANS( `lng` ) - RADIANS( $fLon )) ) * 6380 AS `distance`
+* COS( RADIANS( $fLat )) * COS( RADIANS( `lng` ) - RADIANS( $fLon )) ) * 6371 AS `distance`
 FROM `plant`
 WHERE
 ACOS( SIN( RADIANS( `lat` ) ) * SIN( RADIANS( $fLat ) ) + COS( RADIANS( `lat` ) )
-* COS( RADIANS( $fLat )) * COS( RADIANS( `lng` ) - RADIANS( $fLon )) ) * 6380 < $dist
+* COS( RADIANS( $fLat )) * COS( RADIANS( `lng` ) - RADIANS( $fLon )) ) * 6371 < $dist
 ORDER BY `distance` ";
 
         $result = mysqli_query($con, $qry) or die(mysqli_error($con));
