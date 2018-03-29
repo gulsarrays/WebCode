@@ -1,5 +1,16 @@
 <?php
+/*
+ * Test data
+ * 
+ 1) your latitude : 20.16545450
+    your longitude : 85.4987654
+    Search with in the radius : 0.5 km - to 1 km, then  1.095/1.096/1.097
+ * 
+ 2) your latitude : 38.898047
+    your longitude : -77.036562
+    Search with in the radius : 45km to 110km
 
+ */
 class RadiusSearch {
 
     static $_dbHost = 'localhost';
