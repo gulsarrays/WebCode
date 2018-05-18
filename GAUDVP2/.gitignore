@@ -1,8 +1,0 @@
-CoreEngineRoom/vendor
-CoreEngineRoom/nbproject
-workspace
-*.lock
-
-CoreEngineRoom/src/config/config.php
-CoreEngineRoom/src/config/config_stage.php
-CoreEngineRoom/src/config/cloudinary_config.php
